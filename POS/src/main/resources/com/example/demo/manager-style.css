@@ -1,0 +1,14 @@
+#sidePane{
+-fx-background-color:"dodgerblue";
+}
+.button{
+-fx-background-color:"#028ad9";
+-fx-text-fill:"white";
+}
+.button:hover{
+
+-fx-background-color:"#0286d2";
+}
+#lblRev,#lblSells,#lblStock{
+-fx-text-fill:"white";
+}
