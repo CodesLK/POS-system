@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" stylesheets="@../Style/Style.css" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pos.admin.HelloController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="806.0" prefWidth="602.0" stylesheets="">
+         <children>
+            <BorderPane prefHeight="800.0" prefWidth="600.0">
+               <left>
+                  <Pane prefHeight="800.0" prefWidth="171.0" style="-fx-background-color: #0074D9;" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox prefHeight="382.0" prefWidth="170.0" style="-fx-background-color: #0074D9;">
+                           <children>
+                               <Button fx:id="dashboardbutton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#dashboard" prefHeight="26.0" prefWidth="170.0" styleClass="menu-item" text="Dashboard">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <TitledPane animated="false" styleClass="titled-pane" text="Products" textFill="WHITE">
+                                  <content>
+                                      <VBox styleClass="submenu-box">
+                                          <Button fx:id="viewproductbutton" alignment="TOP_LEFT" onAction="#viewproduct" prefHeight="32.0" prefWidth="170.0" styleClass="submenu-item" text="     View Products" textFill="WHITE" textOverrun="CLIP">
+                                          <font>
+                                             <Font size="10.0" />
+                                          </font>
+                                       </Button>
+                                          <Button fx:id="addproduct_btn" alignment="TOP_LEFT" onAction="#home" prefHeight="30.0" prefWidth="194.0" styleClass="submenu-item" text="     Add Products" />
+                                          <Button fx:id="viewcategorybutton" alignment="TOP_LEFT" onAction="#viewcategory" prefHeight="30.0" prefWidth="182.0" styleClass="submenu-item" text="     View Categories" />
+                                          <Button fx:id="addcategorybutton" alignment="TOP_LEFT" onAction="#addcategory" prefHeight="30.0" prefWidth="178.0" styleClass="submenu-item" text="     Add Category" />
+                                      </VBox>
+                                  </content>
+                              </TitledPane>
+                               <Button fx:id="salesbutton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#sales" prefHeight="26.0" prefWidth="170.0" styleClass="menu-item" text="Sales">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                               <Button fx:id="customerbutton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#customers" prefHeight="26.0" prefWidth="170.0" styleClass="menu-item" text="Customers">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                               <Button fx:id="refundbutton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#refund" prefHeight="26.0" prefWidth="170.0" styleClass="menu-item" text="Refund">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                               <Button fx:id="settingbutton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#setting" prefHeight="26.0" prefWidth="170.0" styleClass="menu-item" text="Settings">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+            
+                                                                   <TitledPane animated="false" text="Report">
+                                   <content>
+                                       <VBox styleClass="submenu-box">
+                                           <Button fx:id="productreportbutton" onAction="#productreport" prefHeight="26.0" prefWidth="170.0" styleClass="submenu-item" text="Product Report" />
+                                           <Button fx:id="financialreportbutton" onAction="#financialreport" prefHeight="26.0" prefWidth="170.0" styleClass="submenu-item" text="Financial Report" />
+                                           <Button fx:id="staffreportbutton" onAction="#staffreport" prefHeight="26.0" prefWidth="170.0" styleClass="submenu-item" text="Staff Reports" />
+            
+                                                                           </VBox>
+                                   </content>
+                              </TitledPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </left>
+               <top>
+                  <HBox prefHeight="34.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+               </top>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="content" layoutX="-3.0" prefHeight="754.0" prefWidth="418.0">
+                           <children>
+                              <Label layoutX="195.0" layoutY="216.0" text="Label" />
+                           </children></AnchorPane>
+                     </children></AnchorPane>
+               </center>
+            </BorderPane>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

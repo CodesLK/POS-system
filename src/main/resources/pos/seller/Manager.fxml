@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1050.0" prefWidth="1680.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pos.seller.ManagerController">
+   <children>
+      <Pane fx:id="homePane" layoutY="-3.0" prefHeight="721.0" prefWidth="1280.0" />
+      <Pane fx:id="dashboard" layoutX="312.0" prefHeight="1047.0" prefWidth="1370.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="312.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ScrollPane layoutX="-10.0" layoutY="-4.0" prefHeight="1055.0" prefWidth="1385.0">
+               <content>
+                  <Pane fx:id="dashPane" prefHeight="1212.0" prefWidth="1382.0">
+                     <children>
+                        <Rectangle fx:id="card" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="220.0" layoutX="48.0" layoutY="45.0" stroke="BLACK" strokeType="INSIDE" width="392.0" />
+                        <Rectangle fx:id="card1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="220.0" layoutX="489.0" layoutY="45.0" stroke="BLACK" strokeType="INSIDE" width="392.0" />
+                        <Rectangle fx:id="card2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="220.0" layoutX="934.0" layoutY="52.0" stroke="BLACK" strokeType="INSIDE" width="392.0" />
+                        <LineChart fx:id="lineSales" layoutX="48.0" layoutY="310.0" prefHeight="472.0" prefWidth="850.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Label fx:id="lbl" layoutX="80.0" layoutY="64.0" prefHeight="77.0" prefWidth="212.0" text="Revenue">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblRev" layoutX="74.0" layoutY="111.0" prefHeight="141.0" prefWidth="338.0" text="Rs.100,000">
+                           <font>
+                              <Font size="64.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="533.0" layoutY="83.0" text="Items">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblStock" layoutX="532.0" layoutY="146.0" text="1000">
+                           <font>
+                              <Font size="64.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="951.0" layoutY="77.0" text="Today sells count">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblSells" layoutX="970.0" layoutY="147.0" text="100">
+                           <font>
+                              <Font size="64.0" />
+                           </font>
+                        </Label>
+                        <PieChart fx:id="pieCost" layoutX="893.0" layoutY="313.0" prefHeight="428.0" prefWidth="470.0" />
+                        <TableView fx:id="tblLow" layoutX="91.0" layoutY="854.0" prefHeight="318.0" prefWidth="1224.0">
+                          <columns>
+                            <TableColumn prefWidth="111.0" text="Item Id" />
+                            <TableColumn minWidth="0.0" prefWidth="300.0" text="Name" />
+                              <TableColumn prefWidth="207.0" text="Catagory" />
+                              <TableColumn prefWidth="568.0" text="Items left" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="80.0" layoutY="782.0" text="Low in Stock">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="80.0" layoutY="278.0" text="Sells">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+      <Pane fx:id="paneAccount" layoutX="307.0" prefHeight="737.0" prefWidth="974.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <Label layoutX="344.0" layoutY="123.0" text="account">
+               <font>
+                  <Font size="79.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="paneSells" layoutX="307.0" prefHeight="738.0" prefWidth="974.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <Label layoutX="426.0" layoutY="173.0" text="Sells">
+               <font>
+                  <Font size="76.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="inventory" layoutX="309.0" prefHeight="1050.0" prefWidth="1370.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <Label layoutX="521.0" layoutY="30.0" prefHeight="107.0" prefWidth="363.0" text="Inventory">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="172.0" layoutX="52.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="567.0" />
+            <Label layoutX="78.0" layoutY="163.0" text="Total Items">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblItems" layoutX="89.0" layoutY="249.0" text="2500">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Button layoutX="956.0" layoutY="401.0" mnemonicParsing="false" text="find" />
+            <TableView fx:id="tblItems" layoutX="152.0" layoutY="457.0" prefHeight="502.0" prefWidth="1046.0">
+              <columns>
+                <TableColumn prefWidth="115.99996948242188" text="Item code" />
+                <TableColumn prefWidth="256.0" text="Item Name" />
+                  <TableColumn prefWidth="229.0" text="Catagory" />
+                  <TableColumn prefWidth="140.0" text="Price" />
+                  <TableColumn prefWidth="137.0001220703125" text="Count" />
+                  <TableColumn prefWidth="75.0" text="Action" />
+              </columns>
+            </TableView>
+            <TextField fx:id="txtSearch" layoutX="454.0" layoutY="403.0" prefHeight="26.0" prefWidth="475.0" />
+            <Button fx:id="btnAddItem" layoutX="566.0" layoutY="972.0" mnemonicParsing="false" onAction="#btnAddItemActionPerfromed" prefHeight="30.0" prefWidth="221.0" text="Add new Item" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="172.0" layoutX="679.0" layoutY="160.0" stroke="BLACK" strokeType="INSIDE" width="605.0" />
+            <Label layoutX="709.0" layoutY="159.0" text="Total Items">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="720.0" layoutY="245.0" text="2500">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="empPane" layoutX="294.0" prefHeight="1049.0" prefWidth="1385.0" visible="false">
+         <children>
+            <Label layoutX="544.0" layoutY="52.0" text="Employee Info">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <TableView layoutX="101.0" layoutY="351.0" prefHeight="601.0" prefWidth="1194.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#44a5ff" height="200.0" layoutX="97.0" layoutY="121.0" stroke="BLACK" strokeType="INSIDE" width="525.0" />
+            <Label layoutX="120.0" layoutY="138.0" text="Total Employes">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="127.0" layoutY="218.0" text="20">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnAddEmp" layoutX="613.0" layoutY="973.0" mnemonicParsing="false" onAction="#setBtnAddEmpActionPerformed" prefHeight="30.0" prefWidth="189.0" text="Add new Employe">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="sidePane" prefHeight="738.0" prefWidth="308.0" stylesheets="@manager-style.css" AnchorPane.bottomAnchor="3.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="lblName" layoutX="110.0" layoutY="17.0" prefHeight="71.0" prefWidth="146.0" text="user">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Label>
+            <Label layoutX="120.0" layoutY="89.0" text="Manager" />
+            <Button fx:id="BtnDashboard" layoutX="-5.0" layoutY="154.0" mnemonicParsing="false" onAction="#btnDashboardActionPerformed" prefHeight="64.0" prefWidth="312.0" text="Dashboard" />
+            <Button fx:id="BtnInventory" layoutX="-5.0" layoutY="242.0" mnemonicParsing="false" onAction="#btnInventoryActionPerformed" prefHeight="64.0" prefWidth="312.0" text="Inventory" />
+            <Button fx:id="BtnSells" layoutX="-5.0" layoutY="338.0" mnemonicParsing="false" onAction="#btnSellsActionPerformed" prefHeight="64.0" prefWidth="312.0" text="Sells" />
+            <Button fx:id="BtnAccount" layoutX="-4.0" layoutY="532.0" mnemonicParsing="false" onAction="#btnAccountActionPerformed" prefHeight="64.0" prefWidth="312.0" text="Account" />
+            <Button fx:id="BtnSettings" layoutX="-3.0" layoutY="634.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="312.0" text="Settings" />
+            <Button fx:id="btnEmp" layoutX="-3.0" layoutY="438.0" mnemonicParsing="false" onAction="#btnEmployeActionPerformed" prefHeight="64.0" prefWidth="312.0" text="Employees" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

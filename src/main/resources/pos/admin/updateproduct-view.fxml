@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="277.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pos.admin.Addproductcontroller">
+   <children>
+      <Label layoutX="22.0" layoutY="66.0" text="Name" />
+      <Label layoutX="20.0" layoutY="102.0" text="Category" />
+      <Label layoutX="21.0" layoutY="179.0" text="SKU" />
+      <Label layoutX="20.0" layoutY="138.0" text="Quantity" />
+      <Label layoutX="22.0" layoutY="217.0" text="Price" />
+      <Label layoutX="21.0" layoutY="261.0" text="verity" />
+      <Label layoutX="22.0" layoutY="305.0" text="Image" />
+      <TextField layoutX="107.0" layoutY="62.0" />
+      <TextField fx:id="quantity" layoutX="107.0" layoutY="134.0" onAction="#numbervalidate" />
+      <TextField layoutX="107.0" layoutY="175.0" />
+      <TextField layoutX="107.0" layoutY="257.0" />
+      <TextField fx:id="price" layoutX="107.0" layoutY="213.0" onKeyPressed="#numbervalidate" />
+      <ComboBox layoutX="106.0" layoutY="98.0" prefWidth="150.0" />
+      <Button layoutX="107.0" layoutY="301.0" mnemonicParsing="false" text="Choose file" />
+      <Button layoutX="19.0" layoutY="350.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="77.0" layoutY="350.0" mnemonicParsing="false" text="Clear" />
+      <Label layoutX="77.0" prefHeight="54.0" prefWidth="150.0" text="Update product Product" wrapText="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
