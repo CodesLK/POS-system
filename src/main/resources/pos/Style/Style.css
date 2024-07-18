@@ -1,0 +1,52 @@
+/* sidebar.css */
+
+.sidebar {
+    -fx-background-color: #0074D9;
+    -fx-padding: 10;
+}
+
+.header {
+    -fx-text-fill: #0074D9;
+    -fx-font-size: 24px;
+    -fx-padding: 10px 0;
+}
+
+.menu-item {
+    -fx-text-alignment: left;
+    -fx-text-fill: white;
+
+    -fx-background-color: #0074D9;
+    -fx-border: none;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 0;
+}
+
+.menu-item:hover {
+    -fx-background-color: #022f89;
+}
+
+.titled-pane {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-background-color: #0074D9;
+
+}
+/*.titled-pane:hover {*/
+/*    -fx-background-color: #022f89;*/
+/*}*/
+.submenu-box {
+    -fx-background-color: #0074D9;
+
+}
+
+.submenu-item {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-background-color: #0074D9;
+    -fx-border: none;
+
+}
+
+.submenu-item:hover {
+    -fx-background-color: #022f89;
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LoginController">
+   <children>
+      <Button fx:id="login" layoutX="501.0" layoutY="303.0" mnemonicParsing="false" onAction="#onLoginButtonClick" text="Login" />
+      <Button fx:id="reset" layoutX="597.0" layoutY="303.0" mnemonicParsing="false" onAction="#onResetButtonClick" text="Reset" />
+      <Label layoutX="501.0" layoutY="179.0" text="Username" />
+      <Label layoutX="501.0" layoutY="226.0" text="Pssword" />
+      <PasswordField fx:id="password" layoutX="501.0" layoutY="247.0" />
+      <Label layoutX="501.0" layoutY="52.0" text="Sign up">
+         <font>
+            <Font name="System Bold" size="45.0" />
+         </font>
+      </Label>
+      <TextField fx:id="username" layoutX="502.0" layoutY="201.0" />
+      <ImageView fitHeight="471.0" fitWidth="435.0" smooth="false">
+         <image>
+            <Image url="@download.jpeg" />
+         </image>
+      </ImageView>
+      <Label fx:id="incorrectpwdlbl" layoutX="513.0" layoutY="286.0" />
+   </children>
+</AnchorPane>
