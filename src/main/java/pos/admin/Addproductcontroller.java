@@ -1,47 +1,53 @@
 package pos.admin;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javafx.stage.Window;
-
-import java.io.File;
-
+import pos.DatabaseConnectionManager;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import static javafx.scene.control.Alert.AlertType.ERROR;
+import static javafx.scene.control.Alert.AlertType.INFORMATION;
 public class Addproductcontroller {
     @FXML
-private TextField price;
-    private final FileChooser fileChooser = new FileChooser();
-    private final Window primaryStage; // Can be a member variable
-
-    public Addproductcontroller(Stage primaryStage) { // Example with constructor injection
-        this.primaryStage = primaryStage;
-        fileChooser.setTitle("Select Image File");
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg"));
-    }
-
-
-    public void pickImage() { // Example method for image selection
-        File selectedFile = fileChooser.showOpenDialog(primaryStage);
-        if (selectedFile != null) {
-            // Load the image from the selected file
-            Image image = new Image(selectedFile.toURI().toString());
-
-            // Use the image object for display or processing
-            // ...
+    private TextField brandtxt;
+public void addbrand()  {
+        if (brandtxt.getText().isEmpty()) {
+            showAlert(Alert.AlertType.WARNING, "Error", "Error", "Brand name cannot be empty.");
+        } else {
+            addbranddb(brandtxt.getText());
         }
     }
-    public void addproductform(){
-
+    public void clearbrand(){
+      brandtxt.setText("");
     }
-    public void numbervalidate(){
-        price.setOnKeyPressed(e -> {
-            if (!e.getCode().isDigitKey() && !e.getCode().equals(KeyCode.BACK_SPACE)) {
-                e.consume();
-            }
-        });
+    public static void addbranddb(String brandname){
+        try  {
+            Connection connection = DatabaseConnectionManager.getConnection();
+            String sql = "INSERT INTO brand (brand_name) VALUES (?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, brandname);
+            statement.executeUpdate();
+            Alert alert = new Alert(INFORMATION);
+            alert.setTitle("gh");
+            alert.setHeaderText("success");
+            alert.setContentText("success");
+            alert.showAndWait();
+            connection.close();
+        } catch (SQLIntegrityConstraintViolationException e) {
+            DatabaseConnectionManager.showAlert(Alert.AlertType.WARNING, "Error", "Error", "Duplicate Entry");
+        } catch (SQLException ignored) {
+        }
     }
-
+    private void showAlert(Alert.AlertType alertType, String title, String headerText, String contentText) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(headerText);
+        alert.setContentText(contentText);
+        alert.showAndWait();
+    }
 }
+
+
